@@ -6,7 +6,9 @@ export default class Tasks extends Component {
         return (
             <ul>
                {
-                   this.props.tasks.map(task =><Task   key={task.id} task={task} changeStatus={()=>this.props.changeStatus(task)} />)
+                   this.props.tasks.map(task =>
+                   <Task   key={task.id} task={task} changeStatus={this.props.changeStatus} removeTask={this.props.removeTask}/>
+                )
                } 
             </ul>
         );
